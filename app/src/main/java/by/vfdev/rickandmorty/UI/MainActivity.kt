@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import by.vfdev.rickandmorty.R
 import by.vfdev.rickandmorty.ViewModel.CharacterViewModel
 import by.vfdev.rickandmorty.ViewModel.CharacterViewModelFactory
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        navController = findNavController(R.id.navHost)
 
         viewModel = ViewModelProvider(this, factory).get(CharacterViewModel::class.java)
     }
