@@ -17,6 +17,8 @@ class CharacterViewModel (val repository: Repository) : ViewModel() {
         MutableLiveData<MutableList<Character>>()
     }
 
+    var characterList: Character? = null
+
     fun getData() {
         scope.launch {
             val data = repository.getData()

@@ -11,7 +11,7 @@ val BASE_URL = "https://rickandmortyapi.com/api/"
 
 interface ApiService {
     @GET("character")
-    suspend fun getCharacters(): MutableList<Character>
+    suspend fun getCharacters(): CharacterCallBack
 
     // Возвращаем объект ретрофит
     companion object Factory {

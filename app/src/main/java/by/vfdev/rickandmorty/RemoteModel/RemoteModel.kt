@@ -10,7 +10,7 @@ class RemoteModel @Inject constructor() {
 
     suspend fun getRemoteData(): MutableList<Character> {
         return try {
-            val characters = apiService.getCharacters()
+            val characters: MutableList<Character> = apiService.getCharacters().results
             characters
         } catch (e: Exception) {
             mutableListOf()

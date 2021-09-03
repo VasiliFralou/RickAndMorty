@@ -8,15 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import by.vfdev.rickandmorty.R
 import by.vfdev.rickandmorty.RemoteModel.Character
 import by.vfdev.rickandmorty.ViewModel.CharacterViewModel
 import kotlinx.android.synthetic.main.fragment_character_list.*
+import java.text.FieldPosition
 
 class CharacterListFragment : Fragment() {
 
     lateinit var viewModel: CharacterViewModel
+    lateinit var navController: NavController
     private val character = mutableListOf<Character>()
 
     override fun onCreateView(
@@ -32,6 +36,8 @@ class CharacterListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        navController = view.findNavController()
+
         viewModel.getData()
 
         viewModel.charactersLive.observe(activity as MainActivity, Observer {
@@ -41,8 +47,14 @@ class CharacterListFragment : Fragment() {
             rvCharacterList.adapter?.notifyDataSetChanged()
         })
 
-        val adapter = CharacterAdapter(character)
+        val adapter = CharacterAdapter(character, this)
         rvCharacterList.adapter = adapter
         rvCharacterList.layoutManager = GridLayoutManager(activity, 1)
+    }
+
+    fun showDetails(position: Int) {
+        Log.e("!!!", position.toString())
+        viewModel.characterList = viewModel.charactersLive.value?.get(position)
+        navController.navigate(R.id.detailsFragment)
     }
 }
