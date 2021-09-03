@@ -1,5 +1,6 @@
 package by.vfdev.rickandmorty.Repository
 
+import android.util.Log
 import by.vfdev.rickandmorty.LocalModel.LocalModel
 import by.vfdev.rickandmorty.RemoteModel.Character
 import by.vfdev.rickandmorty.RemoteModel.RemoteModel

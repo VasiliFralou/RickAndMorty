@@ -11,6 +11,6 @@ interface CharacterDao {
     @Insert
     suspend fun insertCharacters(characters: MutableList<Character>)
 
-    @Query("SELECT * FROM character")
+    @Query("SELECT * FROM characters")
     suspend fun getAllCharacters(): MutableList<Character>
 }
