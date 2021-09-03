@@ -1,6 +1,5 @@
 package by.vfdev.rickandmorty.RemoteModel
 
-import android.util.Log
 import java.lang.Exception
 import javax.inject.Inject
 

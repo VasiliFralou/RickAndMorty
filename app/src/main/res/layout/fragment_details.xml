@@ -18,6 +18,8 @@
     <TextView
         android:id="@+id/tvNameCharacter"
         android:layout_margin="5dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content" />
@@ -25,6 +27,8 @@
     <TextView
         android:id="@+id/tvGender"
         android:layout_margin="5dp"
+        android:textSize="16sp"
+        android:textStyle="italic"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content" />
@@ -32,6 +36,8 @@
     <TextView
         android:id="@+id/tvSpecies"
         android:layout_margin="5dp"
+        android:textSize="16sp"
+        android:textStyle="italic"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content" />
@@ -39,6 +45,8 @@
     <TextView
         android:id="@+id/tvStatus"
         android:layout_margin="5dp"
+        android:textSize="16sp"
+        android:textStyle="italic"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content" />
@@ -46,6 +54,8 @@
     <TextView
         android:id="@+id/tvType"
         android:layout_margin="5dp"
+        android:textSize="16sp"
+        android:textStyle="italic"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content" />

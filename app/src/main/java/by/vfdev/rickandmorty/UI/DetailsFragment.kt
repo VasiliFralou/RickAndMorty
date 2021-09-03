@@ -12,8 +12,6 @@ import by.vfdev.rickandmorty.R
 import by.vfdev.rickandmorty.ViewModel.CharacterViewModel
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_details.*
-import kotlinx.android.synthetic.main.item_layout.*
-import kotlinx.android.synthetic.main.item_layout.view.*
 
 class DetailsFragment : Fragment() {
 

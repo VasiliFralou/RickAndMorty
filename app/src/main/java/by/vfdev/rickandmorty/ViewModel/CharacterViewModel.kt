@@ -1,12 +1,12 @@
 package by.vfdev.rickandmorty.ViewModel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import by.vfdev.rickandmorty.RemoteModel.Character
 import by.vfdev.rickandmorty.Repository.Repository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class CharacterViewModel (val repository: Repository) : ViewModel() {
@@ -30,5 +30,9 @@ class CharacterViewModel (val repository: Repository) : ViewModel() {
         scope.launch {
             repository.saveData(charactersLive.value!!)
         }
+    }
+
+    suspend fun searchDatabase(searchQuery: String): Flow<List<Character>> {
+        return repository.searchDatabase(searchQuery)
     }
 }

@@ -1,5 +1,6 @@
 package by.vfdev.rickandmorty.UI
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -15,7 +16,6 @@ import by.vfdev.rickandmorty.R
 import by.vfdev.rickandmorty.RemoteModel.Character
 import by.vfdev.rickandmorty.ViewModel.CharacterViewModel
 import kotlinx.android.synthetic.main.fragment_character_list.*
-import java.text.FieldPosition
 
 class CharacterListFragment : Fragment() {
 
@@ -33,6 +33,7 @@ class CharacterListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_character_list, container, false)
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -41,7 +42,6 @@ class CharacterListFragment : Fragment() {
         viewModel.getData()
 
         viewModel.charactersLive.observe(activity as MainActivity, Observer {
-            Log.d("!!!", it.toString())
             character.clear()
             character.addAll(it)
             rvCharacterList.adapter?.notifyDataSetChanged()
